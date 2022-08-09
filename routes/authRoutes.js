@@ -8,3 +8,5 @@ router.post('/register', (req, res) => {
 router.post("/login", (req, res) => {
     res.send("login route")
 })
+
+module.exports = router;
