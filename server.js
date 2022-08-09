@@ -12,6 +12,8 @@ app.use(cors());
 
 const server = http.createServer(app);
 
-server.listen(PORT, () => {
-    console.log(`Server is listening at ${PORT}`);
-});
+mongoose.connect(process.env.MONGO_URI).then(() => {
+    server.listen(PORT, () => {
+        console.log(`Server is listening on ${PORT}`);
+    });
+})
