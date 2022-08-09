@@ -4,3 +4,4 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 require("dotenv").config();
 
+const PORT = process.env.PORT || process.env.API_PORT
