@@ -26,4 +26,6 @@ router.post(
     authControllers.controllers.postLogin
 )
 
+// testing middleware
+
 module.exports = router;
