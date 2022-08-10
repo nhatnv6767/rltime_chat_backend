@@ -21,7 +21,15 @@ const postRegister = async (req, res) => {
         })
 
         // create JWT token
+        const token = "JWT TOKEN";
 
+        res.status(201).json({
+            userDetails: {
+                mail: user.mail,
+                token: token,
+                username: user.username,
+            }
+        })
     } catch (e) {
         return ré.status(500).send("Error occurred. Please try again.");
     }
