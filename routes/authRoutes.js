@@ -15,7 +15,15 @@ const loginSchema = Joi.object({
     mail: Joi.string().email(),
 })
 
-router.post('/register', validator.body(registerSchema), authControllers.controllers.postRegister)
-router.post("/login", validator.body(loginSchema), authControllers.controllers.postLogin)
+router.post(
+    '/register',
+    validator.body(registerSchema),
+    authControllers.controllers.postRegister
+)
+router.post(
+    "/login",
+    validator.body(loginSchema),
+    authControllers.controllers.postLogin
+)
 
 module.exports = router;
