@@ -13,8 +13,8 @@ const verifyToken = (req, res, next) => {
         return res.status(403).send("A token is required for authentication")
     }
     try {
-        
+        token = token.replace()
     } catch (e) {
-        
+        return res.status(401).send("Invalid token")
     }
 }
