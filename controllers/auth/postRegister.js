@@ -1,6 +1,9 @@
 
 const postRegister = async (req, res) => {
-    res.send("register route")
+    try {
+    } catch (e) {
+        return ré.status(500).send("Error occurred. Please try again.");
+    }
 }
 
 
