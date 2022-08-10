@@ -4,7 +4,9 @@ const authControllers = require("../controllers/auth/authControllers")
 const Joi = require('joi')
 const validator = require("express-joi-validation").createValidator({});
 
+const registerSchema = Joi.object({
 
+})
 
 router.post('/register', authControllers.controllers.postRegister)
 router.post("/login", authControllers.controllers.postLogin)
