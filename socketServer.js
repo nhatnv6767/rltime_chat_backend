@@ -15,6 +15,8 @@ const registerSocketServer = (server) => {
   io.on('connection', (socket) => {
     console.log('user connected');
     console.log(socket.id);
+
+    // new connection handler
   });
 };
 
