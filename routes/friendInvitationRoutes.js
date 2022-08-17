@@ -15,3 +15,5 @@ router.post('/invite',
     validator.body(postFriendInvitationSchema),
     friendInvitationControllers.controllers.postInvite
 )
+
+module.exports = router;
