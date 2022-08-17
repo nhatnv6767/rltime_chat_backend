@@ -1,4 +1,5 @@
 const User = require("../../models/user")
+const FriendInvitation = require("../../models/friendInvitation")
 
 const postInvite = async (req, res) => {
     const {targetMailAddress} = req.body;
@@ -38,6 +39,8 @@ const postInvite = async (req, res) => {
     if (usersAlreadyFriends) {
         return res.status(409).send("Friend already added. Please check friends list")
     }
+
+    // create new invitation in database
 
     return res.send("Controller is working");
 }
