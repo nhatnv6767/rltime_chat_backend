@@ -21,6 +21,11 @@ const postInvite = async (req, res) => {
 
     // check if invitation has been already sent
 
+    const invitationAlreadyReceived = await FriendInvitation.findOne({
+        senderId: userId,
+        receiverId: targetUser._id
+    })
+
     return res.send("Controller is working");
 }
 
