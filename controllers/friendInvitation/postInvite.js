@@ -1,3 +1,5 @@
+const User = require("../../models/user")
+
 const postInvite = async (req, res) => {
     const {targetMailAddress} = req.body;
 
@@ -16,6 +18,8 @@ const postInvite = async (req, res) => {
     if (!targetUser) {
         return res.status(404).send(`Friend of ${targetMailAddress} has not been found. Please check mail address.`)
     }
+
+    // check if invitation has been already sent
 
     return res.send("Controller is working");
 }
