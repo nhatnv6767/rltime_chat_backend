@@ -31,7 +31,13 @@ const postInvite = async (req, res) => {
     }
 
     // check if the user which we would like to invite is already our friend
-    const usersAlreadyFriends = targetUser
+    const usersAlreadyFriends = targetUser.friends.find(friendId =>
+        friendId.toString() === userId.toString()
+    )
+
+    if (usersAlreadyFriends) {
+        return res.status(409).send("Friend already added. Please check friends list")
+    }
 
     return res.send("Controller is working");
 }
