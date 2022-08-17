@@ -41,4 +41,6 @@ module.exports = {
     addNewConnectedUser,
     removeConnectedUser,
     getActiveConnections,
+    setSocketServerInstance,
+    getSocketServerInstance,
 };
