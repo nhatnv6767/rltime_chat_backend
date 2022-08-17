@@ -41,6 +41,10 @@ const postInvite = async (req, res) => {
     }
 
     // create new invitation in database
+    const newInvitation = await FriendInvitation.create({
+        senderId: userId,
+        receiverId: targetUser._id,
+    })
 
     return res.send("Controller is working");
 }
