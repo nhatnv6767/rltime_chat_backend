@@ -3,3 +3,5 @@ const postInvite = async (req, res) => {
 
     return res.send("Controller is working");
 }
+
+module.exports = postInvite;
