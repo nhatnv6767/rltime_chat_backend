@@ -1,5 +1,15 @@
 const connectedUsers = new Map();
 
+let io = null;
+
+const setSocketServerInstance = (ioInstance) => {
+    io = ioInstance;
+}
+
+const getSocketServerInstance = () => {
+    return io;
+}
+
 const addNewConnectedUser = ({socketId, userId}) => {
     /* Adding a new key-value pair to the Map. */
     connectedUsers.set(socketId, {userId});
