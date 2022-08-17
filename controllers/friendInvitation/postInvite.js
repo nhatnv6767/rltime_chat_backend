@@ -46,7 +46,11 @@ const postInvite = async (req, res) => {
         receiverId: targetUser._id,
     })
 
-    return res.send("Controller is working");
+    // if invitation has been successfully created we would like to update friends invitations
+    // if other user is online
+
+
+    return res.status(201).send("Invitation has been sent.");
 }
 
 module.exports = postInvite;
