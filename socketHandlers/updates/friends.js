@@ -25,7 +25,10 @@ const updateFriendsPendingInvitations = async (userId) => {
 
 const updateFriends = async (userId) => {
     try {
-
+        const user = await User.findById(userId, {_id: 1, friends: 1}).populate(
+            "friends",
+            "_id username mail"
+        )
     } catch (err) {
         console.log(err);
     }
