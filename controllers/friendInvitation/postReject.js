@@ -10,7 +10,7 @@ const postReject = async (req, res) => {
             _id: id
         })
         if (invitationExists) {
-            await FriendInvitation.findByIdAndUpdate(id)
+            await FriendInvitation.findByIdAndRemove(id)
         }
 
         // update pending invitations
