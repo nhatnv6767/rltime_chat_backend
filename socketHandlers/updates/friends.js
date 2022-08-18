@@ -60,4 +60,5 @@ const updateFriends = async (userId) => {
 
 module.exports = {
     updateFriendsPendingInvitations,
+    updateFriends,
 }
