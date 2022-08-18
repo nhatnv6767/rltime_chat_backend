@@ -15,8 +15,14 @@ const registerSocketServer = (server) => {
 
     io.use((socket, next) => {
         authSocket(socket, next);
-
     });
+
+    const emitOnlineUsers = () => {
+        const onlineUsers = serverStore.getOnlineUsers();
+        io.emit(
+            "online-users", {onlineUsers}
+        )
+    }
 
     io.on('connection', async (socket) => {
         console.log('user connected');
