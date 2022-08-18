@@ -29,6 +29,8 @@ const registerSocketServer = (server) => {
         console.log(socket.id);
         await newConnectionHandler(socket, io);
 
+        emitOnlineUsers()
+
         socket.on("disconnect", () => {
             disconnectHandler(socket)
         })
