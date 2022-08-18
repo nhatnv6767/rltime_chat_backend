@@ -32,8 +32,12 @@ const directMessageHandler = async (socket, data) => {
                 messages: [message._id],
                 participants: [userId, receiverUserId]
             })
+
+            // perform and update to sender and receiver if is online
         }
     } catch (err) {
         console.log(err);
     }
 }
+
+module.exports = directMessageHandler;
