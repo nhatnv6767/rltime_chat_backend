@@ -49,6 +49,8 @@ const postInvite = async (req, res) => {
     // if invitation has been successfully created we would like to update friends invitations
     // if other user is online
 
+    // send pending invitations update to specific user
+    friendsUpdate.updateFriendsPendingInvitation(targetUser._id.toString())
 
     return res.status(201).send("Invitation has been sent.");
 }
