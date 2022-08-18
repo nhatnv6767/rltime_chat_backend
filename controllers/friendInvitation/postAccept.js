@@ -19,6 +19,16 @@ const postAccept = async (req, res) => {
 
         await senderUser.save();
         await receiverUser.save();
+
+        // delete invitation
+        await FriendInvitation.findByIdAndDelete(id);
+
+        // update list of the friends if the users are online
+
+        // update list of friends pending invitations
+        await friendsUpdates.updateFriendsPendingInvitations(receiverId.toString())
+
+        return res.status(200).send("Friend successfully added");
     } catch (err) {
         console.log(err);
         return res.status(500).send("Something went wrong please try again");
