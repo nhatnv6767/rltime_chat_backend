@@ -33,6 +33,10 @@ const registerSocketServer = (server) => {
             disconnectHandler(socket)
         })
     });
+
+    setInterval(() => {
+        emitOnlineUsers()
+    }, 8000)
 };
 
 module.exports = {
