@@ -21,6 +21,8 @@ const postAccept = async (req, res) => {
         await receiverUser.save();
 
         // delete invitation
+        // DEFIX - DEBUG: When user a send request to user b and user b also sent a request to user a
+        // we need to find all and delete that
         await FriendInvitation.findByIdAndDelete(id);
 
         // update list of the friends if the users are online
