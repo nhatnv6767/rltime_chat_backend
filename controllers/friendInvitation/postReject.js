@@ -1,5 +1,9 @@
 const postReject = async (req, res) => {
-    return res.send("reject handler")
+    try {
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send("Something went wrong please try again");
+    }
 }
 
 module.exports = postReject;
