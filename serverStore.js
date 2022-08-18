@@ -46,6 +46,7 @@ const getOnlineUsers = () => {
             userId: value.userId,
         })
     })
+    return onlineUsers;
 }
 
 module.exports = {
@@ -54,4 +55,5 @@ module.exports = {
     getActiveConnections,
     setSocketServerInstance,
     getSocketServerInstance,
+    getOnlineUsers,
 };
