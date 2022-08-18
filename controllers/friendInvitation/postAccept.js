@@ -27,6 +27,8 @@ const postAccept = async (req, res) => {
         await FriendInvitation.findByIdAndDelete(id);
 
         // update list of the friends if the users are online
+        await friendsUpdates.updateFriends(senderId.toString());
+        await friendsUpdates.updateFriends(receiverId.toString());
 
         // update list of friends pending invitations
         await friendsUpdates.updateFriendsPendingInvitations(receiverId.toString())
