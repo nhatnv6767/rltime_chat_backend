@@ -22,3 +22,7 @@ const updateFriendsPendingInvitation = async (userId) => {
         console.log(err)
     }
 }
+
+module.exports = {
+    updateFriendsPendingInvitation,
+}
