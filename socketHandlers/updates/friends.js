@@ -2,7 +2,7 @@ const User = require("../../models/user")
 const FriendInvitation = require("../../models/friendInvitation")
 const serverStore = require("../../serverStore")
 
-const updateFriendsPendingInvitation = async (userId) => {
+const updateFriendsPendingInvitations = async (userId) => {
     try {
         const pendingInvitations = await FriendInvitation.find({
             receiverId: userId
@@ -24,5 +24,5 @@ const updateFriendsPendingInvitation = async (userId) => {
 }
 
 module.exports = {
-    updateFriendsPendingInvitation,
+    updateFriendsPendingInvitations,
 }
