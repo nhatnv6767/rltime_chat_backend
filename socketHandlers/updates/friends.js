@@ -23,6 +23,14 @@ const updateFriendsPendingInvitations = async (userId) => {
     }
 }
 
+const updateFriends = async (userId) => {
+    try {
+
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 module.exports = {
     updateFriendsPendingInvitations,
 }
