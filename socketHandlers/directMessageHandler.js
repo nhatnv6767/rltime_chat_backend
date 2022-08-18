@@ -1,4 +1,5 @@
 const Message = require('../models/message')
+const Conversation = require('../models/conversation')
 
 const directMessageHandler = async (socket, data) => {
     try {
@@ -14,6 +15,11 @@ const directMessageHandler = async (socket, data) => {
         })
 
         //find if conversation exist with this two users - if not create new
+        const conversation = await Conversation.findOne({
+            participants: {
+                $all: [userId, receiverUserId]
+            }
+        })
     } catch (err) {
         console.log(err);
     }
