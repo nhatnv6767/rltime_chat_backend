@@ -16,4 +16,10 @@ router.post('/invite',
     friendInvitationControllers.controllers.postInvite
 )
 
+router.post("/accept",
+    auth,
+    validator.body(inviteDecisionSchema),
+    friendInvitationControllers.controllers.postAccept
+)
+
 module.exports = router;
