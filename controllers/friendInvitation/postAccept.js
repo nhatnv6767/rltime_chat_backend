@@ -1,5 +1,10 @@
 const postAccept = async (req, res) => {
-    return res.send("accept handler")
+    try {
+
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send("Something went wrong please try again");
+    }
 }
 
 module.exports = postAccept;
