@@ -16,7 +16,9 @@ const postAccept = async (req, res) => {
         const receiverUser = await User.findById(receiverId);
         senderUser.friends = [...senderUser.friends, receiverId]
         receiverUser.friends = [...receiverUser.friends, senderId]
-        
+
+        await senderUser.save();
+        await receiverUser.save();
     } catch (err) {
         console.log(err);
         return res.status(500).send("Something went wrong please try again");
