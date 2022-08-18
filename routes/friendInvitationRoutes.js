@@ -11,7 +11,7 @@ const postFriendInvitationSchema = Joi.object({
 })
 
 const inviteDecisionSchema = Joi.object({
-    id: Joi.string().required,
+    id: Joi.string().required(),
 })
 
 router.post('/invite',
