@@ -3,6 +3,7 @@ const Conversation = require('../models/conversation')
 
 const directMessageHandler = async (socket, data) => {
     try {
+        console.log("Direct Message Event is being handled")
         const {userId} = socket.user;
         const {receiverUserId, content} = data;
 
