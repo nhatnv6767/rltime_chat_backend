@@ -29,6 +29,28 @@ const updateFriends = async (userId) => {
             "friends",
             "_id username mail"
         )
+
+        if (user) {
+            const friendsList = user.friends.map(f => {
+                return {
+                    id: f._id,
+                    mail: f.mail,
+                    username: f.username,
+                }
+            })
+
+            // find active connections of specific id (online users)
+            const receiverList = serverStore.getActiveConnections(userId)
+
+            // get io server instance
+            const io = serverStore.getSocketServerInstance();
+
+            receiverList.forEach(receiverSocketId => {
+                io.to(receiverSocketId).emit("friends-list", {
+                    friends: friendsList ? friendsList : [],
+                })
+            })
+        }
     } catch (err) {
         console.log(err);
     }
