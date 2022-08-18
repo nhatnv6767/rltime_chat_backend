@@ -20,6 +20,19 @@ const directMessageHandler = async (socket, data) => {
                 $all: [userId, receiverUserId]
             }
         })
+
+        if (conversation) {
+            conversation.messages.push(message._id)
+            await conversation.save()
+
+            // perform and update to sender and receiver if is online
+        } else {
+            // create new conversation if not exists
+            const newConversation = await Conversation.create({
+                messages: [message._id],
+                participants: [userId, receiverUserId]
+            })
+        }
     } catch (err) {
         console.log(err);
     }
