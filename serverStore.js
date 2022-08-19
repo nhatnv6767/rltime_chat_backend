@@ -56,7 +56,13 @@ const addNewActiveRoom = (userId, socketId) => {
         roomCreator: {
             userId,
             socketId,
-        }
+        },
+        participants: [
+            {
+                userId,
+                socketId,
+            }
+        ]
     }
 }
 
