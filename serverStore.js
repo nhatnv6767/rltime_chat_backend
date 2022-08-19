@@ -96,6 +96,8 @@ const joinActiveRoom = (roomId, newParticipant) => {
         participants: [...room.participants, newParticipant]
     }
     activeRooms.push(updatedRoom)
+    console.log("joinActiveRoom:")
+    console.log(activeRooms)
 }
 
 module.exports = {
