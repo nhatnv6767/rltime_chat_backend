@@ -62,7 +62,8 @@ const addNewActiveRoom = (userId, socketId) => {
                 userId,
                 socketId,
             }
-        ]
+        ],
+        roomId: {}
     }
 }
 
