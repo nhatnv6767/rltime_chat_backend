@@ -82,7 +82,9 @@ const getActiveRooms = () => {
 const getActiveRoom = (roomId) => {
     const activeRoom = activeRooms.find(activeRoom => activeRoom.roomId === roomId)
 
-    return activeRoom
+    return {
+        ...activeRoom,
+    }
 }
 
 module.exports = {

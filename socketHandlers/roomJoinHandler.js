@@ -10,6 +10,7 @@ const roomJoinHandler = (socket, data) => {
     }
 
     const roomDetails = serverStore.getActiveRoom(roomId)
+    serverStore.joinActiveRoom(roomId, participantDetails)
 }
 
 module.exports = roomJoinHandler
