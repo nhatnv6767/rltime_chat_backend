@@ -87,6 +87,17 @@ const getActiveRoom = (roomId) => {
     }
 }
 
+const joinActiveRoom = (roomId, newParticipant) => {
+    const room = activeRooms.find(room => room.roomId === roomId);
+    activeRooms = activeRooms.filter((room) => room.roomId !== roomId)
+
+    const updatedRoom = {
+        ...room,
+        participants: [...room.participants, newParticipant]
+    }
+    activeRooms.push(updatedRoom)
+}
+
 module.exports = {
     addNewConnectedUser,
     removeConnectedUser,
@@ -97,4 +108,5 @@ module.exports = {
     addNewActiveRoom,
     getActiveRooms,
     getActiveRoom,
+    joinActiveRoom,
 };
