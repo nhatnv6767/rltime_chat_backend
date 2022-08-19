@@ -79,6 +79,12 @@ const getActiveRooms = () => {
     return [...activeRooms]
 }
 
+const getActiveRoom = (roomId) => {
+    const activeRoom = activeRooms.find(activeRoom => activeRoom.roomId === roomId)
+
+    return activeRoom
+}
+
 module.exports = {
     addNewConnectedUser,
     removeConnectedUser,
@@ -88,4 +94,5 @@ module.exports = {
     getOnlineUsers,
     addNewActiveRoom,
     getActiveRooms,
+    getActiveRoom,
 };
