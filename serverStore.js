@@ -1,4 +1,5 @@
 const connectedUsers = new Map();
+let activeRooms = [];
 
 let io = null;
 
@@ -47,6 +48,16 @@ const getOnlineUsers = () => {
         })
     })
     return onlineUsers;
+}
+
+// rooms
+const addNewActiveRoom = (userId, socketId) => {
+    const newActiveRoom = {
+        roomCreator: {
+            userId,
+            socketId,
+        }
+    }
 }
 
 module.exports = {
