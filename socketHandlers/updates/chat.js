@@ -17,6 +17,10 @@ const updateChatHistory = async (conversationId, toSpecifiedSocketId = null) => 
 
         if (toSpecifiedSocketId) {
             // initial update of chat history
+            return io.to(specifiedSocketId).emit("direct-chat-history", {
+                messages: conversation.messages,
+                participants: conversation.participants,
+            })
         }
 
         // check if users of this conversation are online
