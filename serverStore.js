@@ -68,7 +68,9 @@ const addNewActiveRoom = (userId, socketId) => {
         roomId: uuidv4(),
     }
 
-    activeRooms.push(newActiveRoom)
+    activeRooms = ([...activeRooms, newActiveRoom])
+
+    return newActiveRoom
 }
 
 module.exports = {
