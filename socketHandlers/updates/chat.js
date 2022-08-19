@@ -17,7 +17,7 @@ const updateChatHistory = async (conversationId, toSpecifiedSocketId = null) => 
 
         if (toSpecifiedSocketId) {
             // initial update of chat history
-            return io.to(specifiedSocketId).emit("direct-chat-history", {
+            return io.to(toSpecifiedSocketId).emit("direct-chat-history", {
                 messages: conversation.messages,
                 participants: conversation.participants,
             })
