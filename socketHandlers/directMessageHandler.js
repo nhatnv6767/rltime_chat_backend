@@ -27,6 +27,7 @@ const directMessageHandler = async (socket, data) => {
             await conversation.save()
 
             // perform and update to sender and receiver if is online
+            chatUpdates.updateChatHistory(conversation._id.toString())
         } else {
             // create new conversation if not exists
             const newConversation = await Conversation.create({
@@ -35,6 +36,7 @@ const directMessageHandler = async (socket, data) => {
             })
 
             // perform and update to sender and receiver if is online
+            chatUpdates.updateChatHistory(conversation._id.toString())
         }
     } catch (err) {
         console.log(err);
