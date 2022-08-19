@@ -1,3 +1,5 @@
+const {v4: uuidv4} = require('uuid')
+
 const connectedUsers = new Map();
 let activeRooms = [];
 
@@ -63,7 +65,7 @@ const addNewActiveRoom = (userId, socketId) => {
                 socketId,
             }
         ],
-        roomId: {}
+        roomId: uuidv4(),
     }
 }
 
