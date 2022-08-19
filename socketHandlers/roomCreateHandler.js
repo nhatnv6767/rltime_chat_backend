@@ -8,6 +8,8 @@ const roomCreateHandler = (socket) => {
     const roomDetails = serverStore.addNewActiveRoom(userId, socketId)
 
     socket.emit("room-create", {
-        roomDetails
+        roomDetails,
     })
 }
+
+module.exports = roomCreateHandler;
