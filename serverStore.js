@@ -69,6 +69,8 @@ const addNewActiveRoom = (userId, socketId) => {
     }
 
     activeRooms = ([...activeRooms, newActiveRoom])
+    console.log("Active room: ")
+    console.log(activeRooms)
 
     return newActiveRoom
 }
