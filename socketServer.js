@@ -41,6 +41,10 @@ const registerSocketServer = (server) => {
             directChatHistoryHandler(socket, data);
         })
 
+        socket.on("room-create", () => {
+            roomCreateHandler(socket)
+        })
+
         socket.on("disconnect", () => {
             disconnectHandler(socket)
         })
