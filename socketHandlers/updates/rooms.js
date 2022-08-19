@@ -14,3 +14,7 @@ const updateRooms = (toSpecifiedTargetId = null) => {
         })
     }
 }
+
+module.exports = {
+    updateRooms,
+}
