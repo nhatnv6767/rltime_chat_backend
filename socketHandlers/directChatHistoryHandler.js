@@ -20,3 +20,6 @@ const directChatHistoryHandler = async (socket, data) => {
         console.log(err)
     }
 }
+
+
+module.exports = directChatHistoryHandler
