@@ -80,4 +80,5 @@ module.exports = {
     setSocketServerInstance,
     getSocketServerInstance,
     getOnlineUsers,
+    addNewActiveRoom,
 };
