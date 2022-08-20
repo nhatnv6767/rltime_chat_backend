@@ -15,6 +15,8 @@ const newConnectionHandler = async (socket, io) => {
     // update friends list
     await friendsUpdate.updateFriends(userDetails.userId)
 
-    roomsUpdate.updateRooms(socket.id);
+    setTimeout(() => {
+        roomsUpdate.updateRooms(socket.id);
+    }, [500])
 }
 module.exports = newConnectionHandler
