@@ -101,6 +101,15 @@ const joinActiveRoom = (roomId, newParticipant) => {
     console.log(activeRooms)
 }
 
+const leaveActiveRoom = (roomId, participantSocketId) => {
+    const activeRoom = activeRooms.find(room => room.roomId === roomId);
+    if (activeRoom) {
+        const copyOfActiveRoom = {...activeRoom};
+        copyOfActiveRoom.participants = copyOfActiveRoom.participants
+            .filter(participant => participant.socketId !== participantSocketId)
+    }
+}
+
 module.exports = {
     addNewConnectedUser,
     removeConnectedUser,
