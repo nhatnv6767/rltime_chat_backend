@@ -14,9 +14,12 @@ const roomJoinHandler = (socket, data) => {
 
     // send information to users in room that they should prepare for incoming connection
     roomDetails.participants.forEach(participant => {
-        socket.to(participant.socketId).emit("conn-prepare", {
-            connUserSocketId: participantDetails.socketId,
-        })
+        /* This is sending a message to all the other participants in the room that a new user is joining. */
+        if (participant.socketId !== participantDetails.socketId) {
+            socket.to(participant.socketId).emit("conn-prepare", {
+                connUserSocketId: participantDetails.socketId,
+            })
+        }
     })
 
     roomsUpdates.updateRooms()
