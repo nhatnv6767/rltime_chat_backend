@@ -51,6 +51,10 @@ const registerSocketServer = (server) => {
             roomJoinHandler(socket, data)
         })
 
+        socket.on("room-leave", data => {
+            leaveRoomHandler(socket, data)
+        })
+
         socket.on("disconnect", () => {
             disconnectHandler(socket)
         })
