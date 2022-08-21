@@ -61,6 +61,10 @@ const registerSocketServer = (server) => {
             roomInitializeConnectionHandler(socket, data)
         })
 
+        socket.on("conn-signal", data => {
+            roomSignalingDataHandler(socket, data)
+        })
+
         socket.on("disconnect", () => {
             disconnectHandler(socket)
         })
