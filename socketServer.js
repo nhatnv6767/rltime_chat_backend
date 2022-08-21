@@ -8,6 +8,7 @@ const roomCreateHandler = require("./socketHandlers/roomCreateHandler")
 const roomJoinHandler = require("./socketHandlers/roomJoinHandler")
 const roomLeaveHandler = require("./socketHandlers/roomLeaveHandler")
 const roomInitializeConnectionHandler = require("./socketHandlers/roomInitializeConnectionHandler")
+const roomSignalingDataHandler = require("./socketHandlers/roomSignalingDataHandler")
 
 const registerSocketServer = (server) => {
     const io = require('socket.io')(server, {
