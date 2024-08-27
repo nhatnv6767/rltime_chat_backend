@@ -36,7 +36,6 @@ const registerSocketServer = (server) => {
 
   io.on('connection', async (socket) => {
     console.log('user connected')
-    console.log('user connected')
     console.log(socket.id)
     await newConnectionHandler(socket, io)
 
